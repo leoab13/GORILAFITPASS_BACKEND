@@ -85,10 +85,10 @@ public class RecepcionService {
             case "mensual" -> 1;
             case "trimestral" -> 3;
             case "anual" -> 12;
-            default -> 0; // o lanzar error si el tipo es inválido
+            default -> 0; 
         };
 
-        LocalDate fechaLimite = ultima.getFechaInscripcion().plusMonths(meses); // Suponiendo mensualidad fija
+        LocalDate fechaLimite = ultima.getFechaInscripcion().plusMonths(meses); 
         if (fechaLimite.isBefore(LocalDate.now())) {
             return "Inscripción vencida";
         }
